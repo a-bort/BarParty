@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^landing\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} ^channel\.html$
+RewriteRule . /landing.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /landing.html [L]
+</IfModule>
